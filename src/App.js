@@ -70,13 +70,19 @@ export default function App() {
     return (
       <Container data-testid="users" className="mt-4">
         <Row className="p-4 rounded" style={{backgroundColor: '#f1f1f1'}}>
-          <ul style={{listStyleType: 'none'}}>
+          <ul style={{listStyleType: 'none', backgroundColor: '#D1D5DB'}} className="px-4 rounded">
             {renderedData.map(user => (
               <li key={user.id} data-testid={`user-${user.id}`} style={{backgroundColor: '#D1D5DB'}} className="p-4 mt-2 rounded">
+                <Row className="">
                 <h2>{user.firstName} {user.lastName}</h2>
+                </Row>
+                <Row className="">
                 <p style={{ color:"#9CA3AF" }}>{user.email} &bull; {user.dob}</p>
-                <Button data-testid="update-button" color="warning" className="px-4 mr-2" onClick={() => handleModal(user.id)}>Update</Button>
-                <Button data-testid="delete-button" color="danger" className="px-4" onClick={() => deleteUser(user.id)}>Delete</Button>
+                </Row>
+                <Row>   
+                  <Button data-testid="update-button" color="warning" className="px-4 mr-2" onClick={() => handleModal(user.id)}>Update</Button>
+                  <Button data-testid="delete-button" color="danger" className="px-4" onClick={() => deleteUser(user.id)}>Delete</Button>
+                </Row>
               </li>
             ))}
           </ul>
@@ -84,22 +90,21 @@ export default function App() {
         <Row className="p-4 d-flex justify-content-center">
           <Button
             color="info"
-            className="w-25"
             onClick={previousPage}
             disabled={currentPage === 0}
           >
-            Previous Page
+            Prev
           </Button>
-
-          <h5 className="mx-4 pt-2">{currentPage}</h5>
-
+          
+          <div style={{ backgroundColor: "#f1f1f1", color: "#374151"}} className="mx-2">
+            <h5 className="mx-4 pt-2">{currentPage}</h5>
+          </div>
           <Button
             color="info"
-            className="w-25"
             onClick={nextPage}
             // disabled={!renderedData?.hasMore}
           >
-            Next Page
+            Next
           </Button>
         </Row>
       </Container>
@@ -193,7 +198,7 @@ export default function App() {
                     />
                   </Col>
                   <Col className="p-2">
-                    <Button data-testid="search-button" color="info" type='submit' onClick={handleClick}>Search</Button>
+                    <Button data-testid="search-button" color="info" type='submit' style={{ backgroundColor: '#059669', color: '#D1FAE5' }} onClick={handleClick}>Search</Button>
                   </Col>
                 </Row>
             </Col>
