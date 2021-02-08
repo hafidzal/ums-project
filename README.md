@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# About This Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project I'm using MirageJS as mock server, since it's the only mock server that I'm familiar with.
+I'm using react query to fetch data, few things that I love from react query are their auto refatching features, mutations and pre-fetching.
+For CSS framework I'm using reactstrap because Dathena using reactstrap as based framework.
+Unit testing for this project I'm using react testing-library, sadly, it isn;t working due to some error in React Query i supposed, but I'm still write few testing.
 
-## Available Scripts
+I implemented search featues in this project but it limited only search for first name of user due to limited of MirageJS.
+For pagination, I'm using custom react hook in this project.
 
-In the project directory, you can run:
+# How To Run
+
+You can using this command to run
 
 ### `yarn start`
 
